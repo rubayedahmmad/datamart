@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataMart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- header section start  -->
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="logo.jpeg">
+        </a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#services">services</a>
+            <a href="#review">review</a>
+            <a href="#about">about</a>
+            <a href="#contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fas fa-user-circle" id="user-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNp-LBwuB1-aw1Apjawn3ZjJfkGnvOjW8jg9o872NENg&s"
+                    alt="cart-item01.png">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">$15.99/-</div>
+
+                </div>
+
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNp-LBwuB1-aw1Apjawn3ZjJfkGnvOjW8jg9o872NENg&s"
+                    alt="cart-item02.png">
+                <div class="content">
+                    <h3>cart item 02</h3>
+                    <div class="price">$5.99/-</div>
+
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNp-LBwuB1-aw1Apjawn3ZjJfkGnvOjW8jg9o872NENg&s"
+                    alt="cart-item03.png">
+                <div class="content">
+                    <h3>cart item 03</h3>
+                    <div class="price">$20.99/-</div>
+
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNp-LBwuB1-aw1Apjawn3ZjJfkGnvOjW8jg9o872NENg&s"
+                    alt="cart-item04.png">
+                <div class="content">
+                    <h3>cart item 04</h3>
+                    <div class="price">$10.99/-</div>
+
+                </div>
+
+            </div>
+            <a href="#" class="btn">checkout now</a>
+        </div>
+
+    </header>
+    <!-- header section end  -->
+
+    <!-- home section start  -->
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3> DataMart </h3>
+            <p>Welcome to DataMart, your gateway to the world of data-driven innovation. Explore our platform where
+                insights are uncovered, and possibilities are endless. From data scraping to advanced analytics and
+                machine learning services, we empower you to harness the true potential of your data. Join us on this
+                journey of discovery and transformation, where every data point is a stepping stone towards success.</p>
+            <a href="#services" class="btn">get yours now</a>
+        </div>
+
+    </section>
+    <!-- home section end  -->
+
+    <!-- login/signup section starts -->
+    <div class="login-form-container">
+        <form class="login-form" method="post" action="login.php">
+            <div class="form-header">
+                <h3>Login</h3>
+                <div id="close-login-form" class="fas fa-times"></div>
+            </div>
+            <input type="text" name="loginemail" placeholder="Email" class="box" required>
+            <input type="password" name="loginpassword" placeholder="Password" class="box" required>
+            <input type="submit" value="Login" class="btn">
+            <p>Don't have an account? <a href="#" id="signup-link">Sign up</a></p>
+        </form>
+        <form class="signup-form" style="display:none;" method="post" action="registration.php">
+            <div class="form-header">
+                <h3>Sign up</h3>
+                <div id="close-signup-form" class="fas fa-times"></div>
+            </div>
+            <input type="text" name="username" placeholder="Username" class="box" required>
+            <input type="text" name="firstName" placeholder="First Name" class="box" required>
+            <input type="text" name="lastName" placeholder="Last Name" class="box" required>
+            <input type="email" name="email" placeholder="Email" class="box" required>
+            <input type="password" id="password" name="password" placeholder="Password" class="box" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password"
+                class="box" required>
+            <span id="error-message" style="color:red;display: none;">Passwords do not match</span><br>
+            <span id="error-message2" style="color:red;display: none;">Password must be 8 to 15 characters and contain at least one number, special character, and uppercase letter.</span><br>
+            <input type="submit" value="Sign up" class="btn" id="signup-button" disabled>
+            <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+        </form>
+        <script>
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            const errorMessage = document.getElementById('error-message');
+            const errorMessage2 = document.getElementById('error-message2');
+            const signupButton = document.getElementById('signup-button');
+
+            function checkPasswords() {
+                const passValue = password.value;
+                const confirmPassValue = confirmPassword.value;
+
+                // Initially, disable the signup button and hide the error message
+                signupButton.disabled = true;
+                errorMessage.style.display = 'none';
+
+                if (passValue !== confirmPassValue) {
+                    // If passwords do not match, show the error message
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+                const regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,15}$/;
+                if (!regex.test(passValue)) {
+                    // If password does not meet requirements, show the error message
+                    errorMessage2.style.display = 'block';
+                    return;
+                }
+                if (regex.test(passValue)) {
+                    // If password does not meet requirements, show the error message
+                    errorMessage2.style.display = 'none';
+                    signupButton.disabled = false;
+                    return;
+                }    
+            }
+
+            password.addEventListener('input', checkPasswords);
+            confirmPassword.addEventListener('input', checkPasswords);
+        </script>
+    </div>
+    <!-- login/signup section ends -->
+
+    <!-- services section starts -->
+    <section class="services" id="services">
+        <h1 class="heading">our <span>services</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/service1.png"
+                    alt="services">
+                <h3>Website Scraping</h3>
+                <div class="price">$10 <span>$15</span></div>
+                <a href="#" class="btn">add to cart</a>
+            </div>
+            <div class="box">
+                <img src="images/service2.png"
+                    alt="services">
+                <h3>Google Map Scraping</h3>
+                <div class="price">$15 <span>$20</span></div>
+                <a href="#" class="btn">add to cart</a>
+            </div>
+            <div class="box">
+                <img src="images/service3.png"
+                    alt="services">
+                <h3>Real Estate Website Scraping</h3>
+                <div class="price">$20 <span>$25</span></div>
+                <a href="#" class="btn">add to cart</a>
+            </div>
+            <div class="box">
+                <img src="images/service4.png"
+                    alt="services">
+                <h3>Customize Scraping</h3>
+                <div class="price">$25 <span>$30</span></div>
+                <a href="#" class="btn">add to cart</a>
+            </div>
+        </div>
+    </section>
+    <!-- services section ends -->
+
+    <!-- review section starts -->
+    <section class="review" id="review">
+        <h1 class="heading">customer's <span>review</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/quote.png" alt="review" class="quote">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non delectus dolores libero fugit voluptas,
+                    cum eaque! Dolorem molestias cumque amet aliquam sapiente quas quisquam ab quaerat modi, labore ut
+                    corrupti.</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTu-ACQFHOJVz1HdIm8Lv_95swiaZ3-4Lftw&s"
+                    alt="" class="user">
+                <h3>cat1</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/quote.png" alt="review" class="quote">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non delectus dolores libero fugit voluptas,
+                    cum eaque! Dolorem molestias cumque amet aliquam sapiente quas quisquam ab quaerat modi, labore ut
+                    corrupti.</p>
+                <img src="data:image/jpeg;base64,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"
+                    alt="" class="user">
+                <h3>cat2</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/quote.png" alt="review" class="quote">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non delectus dolores libero fugit voluptas,
+                    cum eaque! Dolorem molestias cumque amet aliquam sapiente quas quisquam ab quaerat modi, labore ut
+                    corrupti.</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt_zPMis8lyVU9MV0Htg5boyz7NP9LYkEY3A&s"
+                    alt="" class="user">
+                <h3>cat3</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- review section ends -->
+
+    <!-- about section starts -->
+    <section class="about" id="about">
+        <h1 class="heading"> <span>about</span> us </h1>
+        <div class="row">
+            <div class="image">
+                <img src="images/logo.png" alt="profile picture">
+            </div>
+            <div class="content">
+                <h3>Discover the Data Diversity with DataMart</h3>
+                <p>DataMart is more than just a platform—it's a gateway to unlocking the true potential of your data.
+                    Our suite of services, including expert data scraping, in-depth analysis, and cutting-edge machine
+                    learning solutions, is designed to provide you with actionable insights that drive meaningful
+                    outcomes. </p>
+                <p>With DataMart, you'll gain a competitive edge by harnessing the power of data to fuel innovation,
+                    optimize strategies, and propel your business forward. Welcome to a world where data transforms into
+                    your greatest asset, empowering you to make smarter decisions and achieve remarkable success.</p>
+                <a href="#" class="btn">learn more</a>
+            </div>
+        </div>
+    </section>
+    <!-- about section ends -->
+
+    <!-- contact section ends -->
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>contact</span> us </h1>
+        <div class="row">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14593.580808528364!2d90.3203018!3d23.8756009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c23dd12bbc75%3A0x313d214552eabe56!2sDaffodil%20Smart%20City!5e0!3m2!1sen!2sbd!4v1716474991281!5m2!1sen!2sbd"
+                allowfullscreen="" loading="lazy"></iframe>
+            <form action="">
+                <h3>Get in Touch</h3>
+                <div class="inputBox">
+                    <span class="fas fa-user"></span>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <textarea class="message" name="message" placeholder="Your Query" required></textarea>
+                <input type="submit" value="Contact Now" class="btn">
+            </form>
+        </div>
+    </section>
+    <!-- contact section ends -->
+
+    <!-- footer section starts -->
+    <section class="footer">
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-pinterest"></a>
+        </div>
+        <div class="links">
+            <a href="#home">home</a>
+            <a href="#services">services</a>
+            <a href="#review">review</a>
+            <a href="#about">about</a>
+            <a href="#contact">contact</a>
+        </div>
+
+        <div class="credit">created by <span>Rubayed Ahmmad Rakin</span> | all rights reserved <sup>&reg;</sup></div>
+    </section>
+    <!-- footer section ends -->
+    <!-- custom js file link  -->
+    <script src="script.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
